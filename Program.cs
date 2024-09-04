@@ -1,0 +1,68 @@
+﻿internal class program
+{
+    static void BT1()
+    {
+        Console.WriteLine("nhap n so nguyen duong");
+        int n = Convert.ToInt32(Console.ReadLine());
+        for ( int i = 1; i <= n; i++ )
+        {
+            if ( n % i == 0 )
+            {
+                Console.Write(i + " ");
+            }
+        }
+
+    }
+
+    static void TimKiemX(int[] a, int n, int x)
+    {
+        int bienDem = 0;
+
+        int index = -1;
+        for (int i = 0; i < n; i++)
+        {
+            if (a[i] == x)
+            {
+                index = i;
+                Console.WriteLine($"thu tu cua phan tu  {a[i]} la {index}");
+                bienDem++;
+                i = i + n;
+            }
+        }
+        if (bienDem == 0)
+        {
+            Console.Write(index);
+        }
+    }
+    static void TimX(int n, ref int[] a)
+    {
+        a = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"a[{i}] = ");
+            a[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Nhap x: ");
+        int x = Convert.ToInt32(Console.ReadLine());
+        TimKiemX(a, n, x);
+
+       
+
+
+    }
+    static void BT2()
+    {
+        Console.WriteLine("nhap n ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[n];   
+        TimX(n, ref a);
+    }
+   
+
+
+    static void Main(string[] args ) 
+    {
+        BT2();
+
+    }
+}
